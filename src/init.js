@@ -1,4 +1,5 @@
 import { compileToFunction } from "./compiler/index";
+import { mountComponent } from "./lifecycle";
 import { initState } from "./State";
 
 
@@ -26,5 +27,9 @@ export function initMixin(Vue) {
         options.render = render;
       }
     }
+    // options.render就是渲染函数；
+    // console.log(options.render);// 调用render方法  渲染成真实dom  替换掉页面中的内容
+    //组件的挂载流程
+    mountComponent(vm, el);//将我们的实例挂载到我们的#app上
   }
 }
