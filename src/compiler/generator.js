@@ -53,6 +53,5 @@ export function generator(el) {
   let children = genChildren(el);
   let code = `_c('${el.tag}',${el.attrs.length > 0 ? getProps(el.attrs) : 'undefined'
     }${children ? `,${children}` : ''})`;
-  console.log(code);
   return code;
 }
